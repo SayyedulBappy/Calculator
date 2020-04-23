@@ -1,0 +1,96 @@
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-weight: normal;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, rgb(81, 147, 233), rgb(4, 17, 133));
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            grid-template-columns: repeat(1fr);
+            height: 100vh;
+        }
+        
+        .calculator {
+            width: 320px;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            grid-template-columns: repeat(4, 80px);
+            grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+            background: rgb(10, 10, 10);
+            border-radius: 0.5rem;
+        }
+        
+        .calculator-grid>button {
+            cursor: pointer;
+            font-size: 2rem;
+            border: 1px solid rgb(10, 10, 10);
+            outline: none;
+            background-color: rgb(10, 10, 10);
+            color: #fff;
+            border-radius: 0.5rem;
+        }
+        
+        .calculator-grid>button:hover {
+            background-color: rgb(2, 2, 2);
+            color: rgb(230, 59, 7);
+            margin: 0.4rem;
+            transition: all 0.5s;
+        }
+        
+        .span-two {
+            grid-column: span 2;
+        }
+        
+        .backspace-icon {
+            filter: invert();
+            width: 45%;
+        }
+        
+        .calculator-grid>button:hover .backspace-icon {
+            filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+        }
+        
+        .output {
+            grid-column: 1 / -1;
+            background-color: rgb(20, 20, 20);
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            flex-direction: column;
+            padding: 1rem;
+            word-wrap: break-word;
+            word-break: break-all;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .output .previous-operand {
+            color: rgba(230, 87, 21, 0.8);
+            font-size: 1.5rem;
+        }
+        
+        .output .current-operand {
+            color: rgb(230, 87, 21);
+            font-size: 2.5rem;
+        }
+        
+        .calculator-grid>button.operations:hover {
+            background: linear-gradient(to right, rgb(231, 100, 39), rgb(243, 61, 5));
+            margin: 0.5rem;
+            color: #fff;
+        }
+        
+        .calculator-grid>button.equals:hover {
+            background: linear-gradient(to right, rgb(81, 233, 94), rgb(4, 133, 4));
+            color: #fff;
+        }
